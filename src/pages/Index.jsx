@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import Button from '../components/Button'
 
 const Index = () => {
 
     // useState
     const [var1, setVar1] = useState('Valor Inicial de variable...');
 
-    // use effect
+    // use effect, para ejecutar alguna otra logica tras el cambio de la variable supervisada.
     useEffect(()=>{
         console.log('se ejecuta cuando cambia la variable')
     },[var1])
@@ -22,6 +23,8 @@ const Index = () => {
             <nav className='bg-gray-100'>
                 <Link to="/contacto">Link Contacto</Link>
             </nav>
+            <br />
+            <Button />
         </div>
     )
 }

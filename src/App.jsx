@@ -1,3 +1,4 @@
+import Layout from "./Layouts/Layout";
 import {
   BrowserRouter,
   Routes,
@@ -12,14 +13,14 @@ import Contacto from './pages/Contacto'
 
 function App() {
   return (
-    
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/contacto" element={<Contacto />} />
-      </Routes>
-    </BrowserRouter>
-
+    <Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/contacto" element={<Contacto />} />
+        </Routes>
+      </BrowserRouter>
+    </Layout>
   );
 }
 
