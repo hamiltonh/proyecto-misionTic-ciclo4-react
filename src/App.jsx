@@ -1,4 +1,8 @@
-import Layout from "./Layouts/Layout";
+import React, { useState } from 'react';
+import Layout from './layouts/Layout'
+import LayoutAdmin from './layouts/LayoutAdmin'
+import IndexAdmin from './pages/admin/Index';
+
 import {
   BrowserRouter,
   Routes,
@@ -11,16 +15,28 @@ import './styles/globals.css'
 import Index from './pages/Index'
 import Contacto from './pages/Contacto'
 
+import { DarkContext } from './context/dark';
+import Configuracion from './pages/Configuracion';
+
 function App() {
+  const [dark, setDark] = useState(false);
   return (
-    <Layout>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contacto" element={<Contacto />} />
-        </Routes>
-      </BrowserRouter>
-    </Layout>
+    <DarkContext.Provider value={{ dark, setDark }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route path='' element={<Index />} />
+              <Route path='contacto' element={<Contacto />} />
+              <Route path='configuracion' element={<Configuracion />} />
+            </Route>
+            <Route path='/admin' element={<LayoutAdmin />}>
+              <Route path='' element={<IndexAdmin />} />
+              {/* <Route path='usuarios' element={<Usuarios />} />
+              <Route path='usuarios/:nombreusuario' element={<UsuarioGenerico />} /> */}
+            </Route>
+          </Routes>
+        </BrowserRouter>
+    </DarkContext.Provider>
   );
 }
 

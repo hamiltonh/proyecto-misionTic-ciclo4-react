@@ -13,3 +13,17 @@ button{
     border-color: black;
     border-style: solid;
 }
+/* dark mode test */
+.fondo-oscuro {
+    background-color: rgb(29, 29, 29);
+  }
+  
+.fondo-claro {
+background-color: rgb(238, 237, 237);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 30px;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({ texto = 'Boton como componente', color = 'coral' }) => {
     return (
         <div>
-            <button className='boton' onClick={ ()=>alert('click') }>Boton como componente</button>
+            <button className='boton' onClick={ ()=>alert('click') }>   {texto}</button>
         </div>
     )
 }
