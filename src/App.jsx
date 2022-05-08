@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Layout from './layouts/Layout'
 import LayoutAdmin from './layouts/LayoutAdmin'
 import IndexAdmin from './pages/admin/Index';
+import Usuarios from './pages/admin/Usuarios'
 
 import {
   BrowserRouter,
@@ -26,13 +27,13 @@ function App() {
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route path='' element={<Index />} />
-              <Route path='contacto' element={<Contacto />} />
-              <Route path='configuracion' element={<Configuracion />} />
+              <Route path='/contacto' element={<Contacto />} />
+              <Route path='/configuracion' element={<Configuracion />} />
             </Route>
             <Route path='/admin' element={<LayoutAdmin />}>
               <Route path='' element={<IndexAdmin />} />
-              {/* <Route path='usuarios' element={<Usuarios />} />
-              <Route path='usuarios/:nombreusuario' element={<UsuarioGenerico />} /> */}
+              <Route path='usuarios' element={<Usuarios />} />
+              {/* <Route path='usuarios/:nombreusuario' element={<UsuarioGenerico />} />  */}
             </Route>
           </Routes>
         </BrowserRouter>
